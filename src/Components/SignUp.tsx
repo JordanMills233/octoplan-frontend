@@ -11,6 +11,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -173,7 +174,7 @@ export default function SignUp() {
                         </IconButton>
                     </Box>
                     <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
+                        <ShieldOutlinedIcon />
                     </Avatar>
                     <Typography component="h1" variant="h5">
                         Sign up
@@ -257,7 +258,7 @@ export default function SignUp() {
                         </Button>
                         <Grid container justifyContent="flex-end">
                             <Grid item>
-                                <Link href="/" variant="body2">
+                                <Link href="/login" variant="body2">
                                     Sign in
                                 </Link>
                             </Grid>

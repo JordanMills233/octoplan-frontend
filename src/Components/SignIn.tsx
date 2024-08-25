@@ -83,7 +83,7 @@ export default function SignIn() {
 
         const loginData = {
             "email": data.get('email'),
-            "password": data.get('email')
+            "password": data.get('password')
         }
 
         if (!validateForm(event)) {
@@ -184,7 +184,7 @@ export default function SignIn() {
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="/signup" variant="body2">
+                                <Link href="/register" variant="body2">
                                     {"Sign Up"}
                                 </Link>
                             </Grid>
