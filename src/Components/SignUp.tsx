@@ -10,7 +10,6 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -20,7 +19,6 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Alert from '@mui/material/Alert';
 import {useState} from "react";
-import { useRouter } from 'next/navigation';
 
 function Copyright(props: any) {
     return (
@@ -35,9 +33,11 @@ function Copyright(props: any) {
     );
 }
 
-export default function SignUp() {
+interface SignUpProps {
+    onVerificationNeeded: (email : string) => void;
+}
 
-    const router = useRouter();
+export default function SignUp({onVerificationNeeded} : SignUpProps) {
 
     const [darkMode, setDarkMode] = useState(true);
     const [error, setError] = useState<string | null>(null);
@@ -132,9 +132,11 @@ export default function SignUp() {
                 setSuccess("User created successfully!");
                 setError(null)
 
-                setTimeout(() => {
-                    router.push('/');  // Assuming '/' is your sign-in page route
-                }, 2000);
+                onVerificationNeeded(result.email)
+
+                // setTimeout(() => {
+                //     router.push('/');  // Assuming '/' is your sign-in page route
+                // }, 2000);
             } else {
                 setError(result.message || "An error occurred during sign up.");
                 setSuccess(null);
