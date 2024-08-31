@@ -1,7 +1,7 @@
 ﻿"use client"
 
-import SignUp from "@/Components/SignUp";
-import Verify from "@/Components/Verify";
+import SignUp from "@/components/SignUp";
+import Verify from "@/components/Verify";
 import {useState} from "react";
 
 export default function SignUpPage() {
