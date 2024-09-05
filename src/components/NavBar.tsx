@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react";
 import {
     NavigationMenu,
     NavigationMenuItem,
@@ -74,7 +73,7 @@ export const Navbar = () => {
                         <a
                             rel="noreferrer noopener"
                             href="/register"
-                                className={`border rounded text-white bg-purple-800 ${buttonVariants({variant: "outline"})}`}
+                                className={`border rounded text-white bg-purple-800 hover:bg-purple-900 hover:text-white border-purple-800 ${buttonVariants({variant: "ghost"})}`}
                         >
                             Register
                         </a>

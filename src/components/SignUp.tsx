@@ -14,9 +14,6 @@ import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import IconButton from "@mui/material/IconButton";
-import Brightness7Icon from "@mui/icons-material/Brightness7";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Alert from '@mui/material/Alert';
 import {useState} from "react";
 
@@ -170,15 +167,10 @@ export default function SignUp({onVerificationNeeded} : SignUpProps) {
                         alignItems: 'center',
                     }}
                 >
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
-                        <IconButton sx={{ ml: 1 }} onClick={() => setDarkMode(!darkMode)} color="inherit">
-                            {darkMode ? <Brightness7Icon /> : <Brightness4Icon />}
-                        </IconButton>
-                    </Box>
                     <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
                         <ShieldOutlinedIcon />
                     </Avatar>
-                    <Typography component="h1" variant="h5">
+                    <Typography component="h1" variant="h5" color="lightgray">
                         Sign up
                     </Typography>
                     <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
