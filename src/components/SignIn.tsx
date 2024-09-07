@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 
 function Copyright(props: any) {
     return (
@@ -30,7 +31,7 @@ function Copyright(props: any) {
 }
 
 export default function SignIn() {
-
+    const router = useRouter()
     const [LoggedIn, setLoggedIn] = React.useState(false);
     const [darkMode, setDarkMode] = useState(true);
 
@@ -99,6 +100,13 @@ export default function SignIn() {
             const result = await response.json();
             setLoggedIn(result.flag)
             console.log(result)
+            localStorage.setItem('user', result.userId);
+
+            const data = await fetch(`http://localhost:5138/User/GetUser?userId=${localStorage.getItem("user")}`);
+            const json = await data.json();
+            localStorage.setItem("userName", json.firstName + " " + json.lastName);
+
+            router.push("/dashboard")
         } catch (e) {
             console.log(e)
         }
